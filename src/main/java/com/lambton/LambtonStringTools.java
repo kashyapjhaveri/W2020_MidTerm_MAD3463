@@ -5,6 +5,8 @@
  */
 package com.lambton;
 
+import java.util.HashMap;
+
 /**
  *
  * @author Pritesh Patel
@@ -28,7 +30,29 @@ public class LambtonStringTools
     //3 - FIND MOST FREQUENT CHARACTER FROM STRING
     public static String mostFrequent(String s) 
     {
-        return null;
+        char temp[]=s.toCharArray();
+
+        HashMap<Character,Integer> frequentLetters = new HashMap<Character, Integer>();
+
+        for (int i=0;i<s.length();i++)
+        {
+            if (frequentLetters.containsKey(temp[i]))
+            {
+                int tempValue= frequentLetters.get(temp[i]);
+                tempValue++;
+                frequentLetters.put(temp[i],tempValue);
+            }
+            else
+            {
+                frequentLetters.put(temp[i],1);
+            }
+        }
+
+        for (int a:frequentLetters.values())
+        {
+            System.out.println(a);
+        }
+        return  null;
     }
     
     //4 - CONVERT BINARY NUMBER TO DECIMALS
