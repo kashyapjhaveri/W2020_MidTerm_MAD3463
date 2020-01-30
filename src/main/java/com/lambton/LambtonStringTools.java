@@ -5,6 +5,7 @@
  */
 package com.lambton;
 
+import javax.print.DocFlavor;
 import java.util.HashMap;
 
 /**
@@ -48,10 +49,12 @@ public class LambtonStringTools
             }
         }
 
-        for (int a:frequentLetters.values())
+
+
+        /*for (int a:frequentLetters.values())
         {
             System.out.println(a);
-        }
+        }*/
         return  null;
     }
     
@@ -64,6 +67,23 @@ public class LambtonStringTools
     //5 - REPLACING SUBSTRING WITH NEW STRING IN EXISTING STRING
     public static String replaceSubString(String originalString, String findString, String newString) 
     {
-        return null;
+
+        String stringInWords[]=originalString.split("\\s+");
+        String temp=" ";
+        for (int i=0;i<stringInWords.length;i++)
+        {
+
+            if (stringInWords[i].compareToIgnoreCase(findString)==0)
+            {
+                stringInWords[i]=newString;
+            }
+        }
+
+        for (String t:stringInWords) {
+
+            temp=temp+t+" ";
+        }
+
+        return temp;
     }
 }
