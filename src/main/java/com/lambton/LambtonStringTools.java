@@ -17,8 +17,32 @@ public class LambtonStringTools
     //1 - REVERSE STRING
     public static String reverse(String s)
     {
+        if (s==null)
+        {
+            return null;
+        }
+        else {
 
-        return null;
+
+
+            /*char temp[] = s.toCharArray();
+            int len = s.length();
+
+            for (int i = 0, j = len - 1; j > 0; i++, j--) {
+                char t = temp[j];
+                temp[j] = temp[i];
+                temp[i] = t;
+            }
+            return new String(temp);*/
+
+            String splittedArray[]= s.split("\\s+");
+            String temp=" ";
+            for (int i=splittedArray.length-1;i>0;i--)
+            {
+                temp=temp+splittedArray[i]+" ";
+            }
+            return temp;
+        }
     }
     
     //2 - FORMAT INITIALS OF STRING
@@ -61,7 +85,11 @@ public class LambtonStringTools
     //4 - CONVERT BINARY NUMBER TO DECIMALS
     public static int binaryToDecimal(String s) 
     {
-       return 0;
+
+
+
+
+        return 0;
     }
      
     //5 - REPLACING SUBSTRING WITH NEW STRING IN EXISTING STRING
