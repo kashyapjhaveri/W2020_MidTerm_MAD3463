@@ -14,6 +14,12 @@ import java.util.HashMap;
  */
 public class LambtonStringTools 
 {
+    public static String[] splitTheStringIntoArray(String s)
+    {
+        return s.split("\\s+");
+    }
+
+
     //1 - REVERSE STRING
     public static String reverse(String s)
     {
@@ -35,7 +41,7 @@ public class LambtonStringTools
             }
             return new String(temp);*/
 
-            String splittedArray[]= s.split("\\s+");
+            String splittedArray[]= splitTheStringIntoArray(s);
             String temp=" ";
             for (int i=splittedArray.length-1;i>0;i--)
             {
@@ -48,7 +54,6 @@ public class LambtonStringTools
     //2 - FORMAT INITIALS OF STRING
     public static String initials(String s) 
     {
-
         return null;
     }
         
@@ -96,7 +101,7 @@ public class LambtonStringTools
     public static String replaceSubString(String originalString, String findString, String newString) 
     {
 
-        String stringInWords[]=originalString.split("\\s+");
+        String stringInWords[]=splitTheStringIntoArray(originalString);
         String temp=" ";
         for (int i=0;i<stringInWords.length;i++)
         {
